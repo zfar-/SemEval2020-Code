@@ -40,7 +40,7 @@ from transformers import (
     XLNetConfig,
     XLNetForMultipleChoice,
     XLNetTokenizer,
-    get_linear_schedule_with_warmup,
+    get_linear_schedule_with_warmup
 )
 from utils_taskA import convert_examples_to_features, processors
 
@@ -55,9 +55,7 @@ logger = logging.getLogger(__name__)
 
 
 
-ALL_MODELS = sum(
-   (tuple(conf.pretrained_config_archive_map.keys()) for conf in (BertConfig, XLNetConfig, RobertaConfig)), ()
-)
+ALL_MODELS = ('bert-base-uncased', 'bert-large-uncased', 'bert-base-cased', 'bert-large-cased', 'bert-base-multilingual-uncased')
 
 
 MODEL_CLASSES = {
